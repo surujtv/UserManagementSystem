@@ -1,0 +1,449 @@
+1.Register User
+================
+URL:http://localhost:4056/api/register
+Request Type:POST 
+Request Body:
+{
+    "name":"Neha Sharma",
+    "email":"nehasharma@gmail.com",
+    "password":"kuchtobatadebhaipasswordkyarakhu@123?",
+    "mobile":"7899878366",
+    "city":"Indore",
+    "state":"M.P",
+    "pincode":452001,
+    "gender":"Male"
+}
+Response:
+{
+    "success": true,
+    "msg": "Registered Successfully",
+    "user": {
+        "name": "neha sharma",
+        "email": "nehasharma@gmail.com",
+        "password": "$2b$10$OsLUnOaKZS1ZuwJ17hv0SuTdkd.ZzCX73TzmfyL.CdpJBsURBxt5e",
+        "mobile": "7899878366",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "role": "user",
+        "status": 0,
+        "info": "Wed Jan 31 2024 11:34:00 GMT+0530 (India Standard Time)",
+        "_id": "65b9e3cde412f859fcb1678f",
+        "__v": 0
+    }
+}
+=====================
+2.Get all users 
+
+URL:http://localhost:4056/admin/userlist
+Request Type:GET 
+Response:
+{
+    "success": true,
+    "records": [
+        {
+            "_id": "65b9e2d6e412f859fcb16789",
+            "name": "mohit verma",
+            "email": "mohitverma@gmail.com",
+            "password": "$2b$10$0aV/sYpS4H59xctvljvW/uIrO.3HA5hD3fLUbPVhSikKHCeAeMV.m",
+            "mobile": "7899878366",
+            "address": {
+                "city": "Dewas",
+                "state": "M.P",
+                "pincode": 452001
+            },
+            "gender": "Male",
+            "role": "user",
+            "status": 0,
+            "info": "Wed Jan 31 2024 11:34:00 GMT+0530 (India Standard Time)",
+            "__v": 0
+        },
+        {
+            "_id": "65b9e2fce412f859fcb1678c",
+            "name": "admin",
+            "email": "admin@gmail.com",
+            "password": "$2b$10$JJhOyIi/XlJNwgmK1Uy8yOKn1yktUoNQZLZLcTbnwtO2A1Di9rnhC",
+            "mobile": "7899878366",
+            "address": {
+                "city": "Indore",
+                "state": "M.P",
+                "pincode": 452001
+            },
+            "gender": "Male",
+            "role": "user",
+            "status": 0,
+            "info": "Wed Jan 31 2024 11:34:00 GMT+0530 (India Standard Time)",
+            "__v": 0
+        },
+        {
+            "_id": "65b9e3cde412f859fcb1678f",
+            "name": "neha sharma",
+            "email": "nehasharma@gmail.com",
+            "password": "$2b$10$OsLUnOaKZS1ZuwJ17hv0SuTdkd.ZzCX73TzmfyL.CdpJBsURBxt5e",
+            "mobile": "7899878366",
+            "address": {
+                "city": "Indore",
+                "state": "M.P",
+                "pincode": 452001
+            },
+            "gender": "Male",
+            "role": "user",
+            "status": 0,
+            "info": "Wed Jan 31 2024 11:34:00 GMT+0530 (India Standard Time)",
+            "__v": 0
+        }
+    ]
+}
+
+==========
+
+3.get single user 
+URL : http://localhost:4056/admin/user?_id=65b9e2d6e412f859fcb16789
+
+Request Type:GET 
+Response:
+{
+    "success": true,
+    "records": [
+        {
+            "_id": "65b9e2d6e412f859fcb16789",
+            "name": "mohit verma",
+            "email": "mohitverma@gmail.com",
+            "password": "$2b$10$0aV/sYpS4H59xctvljvW/uIrO.3HA5hD3fLUbPVhSikKHCeAeMV.m",
+            "mobile": "7899878366",
+            "address": {
+                "city": "Dewas",
+                "state": "M.P",
+                "pincode": 452001
+            },
+            "gender": "Male",
+            "role": "user",
+            "status": 0,
+            "info": "Wed Jan 31 2024 11:34:00 GMT+0530 (India Standard Time)",
+            "__v": 0
+        }
+    ]
+}
+
+4.Manage Users status : verify and block 
+URL:http://localhost:4056/admin/managuserstatus?id=65b9e2d6e412f859fcb16789&s=block
+Request Type:GET 
+Response:
+{
+    "success": true,
+    "msg": {
+        "_id": "65b9e2d6e412f859fcb16789",
+        "name": "mohit verma",
+        "email": "mohitverma@gmail.com",
+        "password": "$2b$10$0aV/sYpS4H59xctvljvW/uIrO.3HA5hD3fLUbPVhSikKHCeAeMV.m",
+        "mobile": "7899878366",
+        "address": {
+            "city": "Dewas",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "role": "user",
+        "status": 0,
+        "info": "Wed Jan 31 2024 11:34:00 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+=============
+5.URL:http://localhost:4056/admin/managuserstatus?id=65b9e2d6e412f859fcb16789&s=verify
+Request Type:GET 
+Response:
+{
+    "success": true,
+    "msg": {
+        "_id": "65b9e2d6e412f859fcb16789",
+        "name": "mohit verma",
+        "email": "mohitverma@gmail.com",
+        "password": "$2b$10$0aV/sYpS4H59xctvljvW/uIrO.3HA5hD3fLUbPVhSikKHCeAeMV.m",
+        "mobile": "7899878366",
+        "address": {
+            "city": "Dewas",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "role": "user",
+        "status": 1,
+        "info": "Wed Jan 31 2024 11:34:00 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+
+6. Delete User 
+
+URL:http://localhost:4056/admin/managuserstatus?id=65b9e3cde412f859fcb1678f
+
+Request Type:GET 
+Response:
+{
+    "success": true,
+    "msg": "User Record Deleted Successfully!!"
+}
+
+7.Create Post
+URL:http://localhost:4056/user/post
+Request Type: Post
+Request Parameter:Note: Form Data 
+{
+  "post_description": "Good Morning",
+  "post_img": "cinqueterre.jpg", (type : File)
+}
+Response:  
+{
+    "success": true,
+    "post": {
+        "post_description": "Good Morning",
+        "post_img": "http://localhost:4056/post/1706855121828_cinqueterre.jpg",
+        "_id": "65bc8ad1f3c70480c964e32e",
+        "__v": 0
+    }
+}
+
+8.Login User 
+URL:http://localhost:4056/api/login
+Request Type: GET 
+Request Parameter :
+{
+    "email":"mohitverma@gmail.com",
+    "password":"123456"
+}
+Response:
+{
+    "success": true,
+    "msg": "Login Success",
+    "record": {
+        "_id": "65b9e2d6e412f859fcb16789",
+        "name": "mohit verma",
+        "email": "mohitverma@gmail.com",
+        "password": "$2b$10$0aV/sYpS4H59xctvljvW/uIrO.3HA5hD3fLUbPVhSikKHCeAeMV.m",
+        "mobile": "7899878366",
+        "address": {
+            "city": "Dewas",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "role": "user",
+        "status": 1,
+        "info": "Wed Jan 31 2024 11:34:00 GMT+0530 (India Standard Time)",
+        "__v": 0
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NWI5ZTJkNmU0MTJmODU5ZmNiMTY3ODkiLCJpYXQiOjE3MDcxOTgyNzcsImV4cCI6MTcwNzYzMDI3N30.KjbqKdMvc0HzKG6aziR90YGub6AgGlZz8l_iTd4JsYk"
+}
+
+9. Change User password
+URL:http://localhost:4056/user/changepassword
+Request Type: POST 
+Request Parameter:
+{
+    "password":"kuchbhi",
+    "confirm_password":"kuchbhi"
+}
+Response:
+{
+    "success": true,
+    "msg": "Password changed successfully",
+    "updatedrecord": {
+        "_id": "65b9e2d6e412f859fcb16789",
+        "name": "mohit verma",
+        "email": "mohitverma@gmail.com",
+        "password": "$2b$10$7pp12Uxu2sitOsinv5DzsuguFE1kXDoxaSg/n1gvdPsPX1a2sKAsi",
+        "mobile": "7899878366",
+        "address": {
+            "city": "Dewas",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "role": "user",
+        "status": 1,
+        "info": "Wed Jan 31 2024 11:34:00 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+
+10. Send Link to Gmail 
+URL:http://localhost:4056/api/senduserpasswordresetemail
+
+Request Type:POST 
+{
+    "email":"vjuniversal1@gmail.com"
+}
+
+Response:
+{
+    "success": true,
+    "msg": "Password Reset Email Send...Please Check Your Email",
+    "Info": {
+        "accepted": [
+            "vjuniversal1@gmail.com"
+        ],
+        "rejected": [],
+        "ehlo": [
+            "SIZE 35882577",
+            "8BITMIME",
+            "AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH",
+            "ENHANCEDSTATUSCODES",
+            "PIPELINING",
+            "CHUNKING",
+            "SMTPUTF8"
+        ],
+        "envelopeTime": 1078,
+        "messageTime": 962,
+        "messageSize": 922,
+        "response": "250 2.0.0 OK  1707371186 e34-20020a630f22000000b005dc4755118esm478317pgl.76 - gsmtp",
+        "envelope": {
+            "from": "vjuniversal1@gmail.com",
+            "to": [
+                "vjuniversal1@gmail.com"
+            ]
+        },
+        "messageId": "<f560c661-352a-3e17-c8fe-1eb573d32cbf@gmail.com>"
+    }
+}
+===================
+11. Reset Password
+URL:http://localhost:4056/api/userpasswordreset?id=65c320d1a1dbbfb7ed48b28f&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOiI2NWMzMjBkMWExZGJiZmI3ZWQ0OGIyOGYiLCJpYXQiOjE3MDczNzExODIsImV4cCI6MTcwNzM3Mjk4Mn0.aNVtv_eBsCuQrim24xfNhcDYdqla7vsXiIxpAQ0cViQ
+
+Request Type:POST 
+Request Parameter:
+{
+    "password":"videh123",
+    "confirm_password":"videh123"
+}
+Response:
+{
+    "success": true,
+    "msg": "Password reset successfully",
+    "record": {
+        "_id": "65c320d1a1dbbfb7ed48b28f",
+        "name": "videh jaiswal",
+        "email": "vjuniversal1@gmail.com",
+        "password": "$2b$10$Yh5vmeVUd882dgHcR8yf/O9Es2bM2SMts7aX53v1PkSHiyr6aZI6O",
+        "mobile": "7899878377",
+        "address": {
+            "city": "Indore",
+            "state": "M.P",
+            "pincode": 452001
+        },
+        "gender": "Male",
+        "role": "user",
+        "status": 1,
+        "info": "Wed Feb 07 2024 11:47:21 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+
+12. Edit Profile
+URL:http://localhost:4056/user/editprofile
+Request Type:POST 
+Request Parameter:
+{
+    "name":"videh kumar jaiswal",
+    "mobile":"7899878388",
+    "gender":"Male",
+    "city":"Ujjain",
+    "state":"M.P",
+    "pincode":456335
+}
+Response:
+{
+    "success": true,
+    "msg": "User Record Updated Successfully !",
+    "record": {
+        "_id": "65c320d1a1dbbfb7ed48b28f",
+        "name": "videh kumar jaiswal",
+        "email": "vjuniversal1@gmail.com",
+        "password": "$2b$10$Yh5vmeVUd882dgHcR8yf/O9Es2bM2SMts7aX53v1PkSHiyr6aZI6O",
+        "mobile": "7899878388",
+        "address": {
+            "city": "Ujjain",
+            "state": "M.P",
+            "pincode": 456335
+        },
+        "gender": "Male",
+        "role": "user",
+        "status": 1,
+        "info": "Wed Feb 07 2024 11:47:21 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
+
+13.GET Post according to user
+URL:http://localhost:4056/user/postlist?id=65b9e2d6e412f859fcb16789
+
+Request Type:GET 
+Response:
+{
+    "success": true,
+    "post": [
+        {
+            "_id": "65c5c56891c8e66ce45670dc",
+            "post_description": "Happy Winters",
+            "post_img": "http://localhost:4056/post/1707459944879_whether.jpg",
+            "userId": "65b9e2d6e412f859fcb16789",
+            "__v": 0
+        }
+    ]
+}
+
+14.Create Post according to user 
+URL:http://localhost:4056/user/post
+Request Type:POST 
+Request Parameter :
+{
+    post_description :Happy Winters,
+    post_img:whether.jpg,
+    userId:65b9e2d6e412f859fcb16789
+}
+
+Response:
+{
+    "success": true,
+    "post": {
+        "post_description": "Happy Winters",
+        "post_img": "http://localhost:4056/post/1707459944879_whether.jpg",
+        "userId": "65b9e2d6e412f859fcb16789",
+        "_id": "65c5c56891c8e66ce45670dc",
+        "__v": 0
+    }
+}
+
+15.get all posts with userid
+URL:http://localhost:4056/admin/posts
+Request Type:GET 
+Response:
+{
+    "success": true,
+    "post": [
+        {
+            "_id": "65c5bf20829a0bbbb791d845",
+            "post_description": "Hotel",
+            "post_img": "http://localhost:4056/post/1707458336991_hotel.jpg",
+            "userId": "65c320d1a1dbbfb7ed48b28f",
+            "__v": 0
+        },
+        {
+            "_id": "65c5bfae829a0bbbb791d847",
+            "post_description": "Whether is Awsome",
+            "post_img": "http://localhost:4056/post/1707458478811_whether.jpg",
+            "userId": "65c320d1a1dbbfb7ed48b28f",
+            "__v": 0
+        },
+        {
+            "_id": "65c5c56891c8e66ce45670dc",
+            "post_description": "Happy Winters",
+            "post_img": "http://localhost:4056/post/1707459944879_whether.jpg",
+            "userId": "65b9e2d6e412f859fcb16789",
+            "__v": 0
+        }
+    ]
+}
