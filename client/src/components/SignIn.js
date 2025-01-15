@@ -21,15 +21,15 @@ export default function SignIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(FormData);
+    // console.log(FormData);
     axios
       .post(SIGNIN, FormData)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         const { name, email, role, _id, mobile, gender } = response.data.record;
         const { state, city, pincode } = response.data.record.address;
         const { token, success } = response.data;
-        console.log(token);
+        // console.log(token);
         if (success === true) {
           localStorage.setItem("_id", _id);
           localStorage.setItem("name", name);

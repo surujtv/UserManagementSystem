@@ -9,9 +9,9 @@ dotenv.config()
 const createPost = async (req, res) => {
     const { post_description, userId } = req.body
     const post_img = req.file.path
-    console.log(post_description)
-    console.log(post_img)
-    console.log(userId)
+    // console.log(post_description)
+    // console.log(post_img)
+    // console.log(userId)
     const Id = new ObjectId(userId)
     try {
         const postdata = new PostModal({
@@ -43,7 +43,7 @@ const changePassword = async (req, res) => {
         } else {
             // const salt = await bcrypt.genSalt(10)
             const newHashPassword = await bcrypt.hash(password, 10)
-            console.log(req.user._id)
+            // console.log(req.user._id)
             const updateduser = await UserModal.findByIdAndUpdate(req.user._id, { $set: { password: newHashPassword } }, {
                 new: true,
                 useFindAndModify: false
@@ -64,14 +64,14 @@ const changePassword = async (req, res) => {
 
 const editProfile = async (req, res) => {
     const { name, mobile, gender, city, state, pincode } = req.body
-    console.log(req.body)
+    // console.log(req.body)
     try {
         const updatedDetails = await UserModal.findByIdAndUpdate(
             req.user._id,
             { $set: { name: name, mobile: mobile, gender: gender, address: { city: city, state: state, pincode: pincode } } },
             { returnDocument: "after" })
 
-        console.log(updatedDetails)
+        // console.log(updatedDetails)
         return res.status(200).json({
             success: true,
             msg: "User Record Updated Successfully !",
@@ -89,11 +89,11 @@ const editProfile = async (req, res) => {
 const fetchUserPost = async (req, res) => {
     const { id } = req.query
     const userid = new ObjectId(id)
-    console.log("Get UserID:", userid)
+    // console.log("Get UserID:", userid)
     // console.log(id)
     try {
         const posts = await PostModal.find({ userId:userid })
-        console.log(posts)
+        // console.log(posts)
         return res.status(200).json({
             success: true,
             post: posts

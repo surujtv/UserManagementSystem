@@ -32,7 +32,7 @@ const fetchSingleUser = async (req, res) => {
 }
 const manageUserStatus = async (req, res) => {
     const { id, s } = req.query
-    console.log("get id:===>", id, s)
+    // console.log("get id:===>", id, s)
     if (s == "block") {
         try {
             const result = await UserModal.findByIdAndUpdate({
@@ -106,7 +106,7 @@ const manageUserStatus = async (req, res) => {
 const fetchPosts = async (req, res) => {
     try {
     const posts = await PostModal.find().populate("userId")
-        console.log(posts)
+        // console.log(posts)
         return res.status(200).json({
             success: true,
             post: posts

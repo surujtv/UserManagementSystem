@@ -4,11 +4,11 @@ const jwt = require('jsonwebtoken')
 const transporter = require('../modal/emailConfig')
 
 const userRegister = async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     const { name, email, password, mobile, gender, city, state, pincode } = req.body
     try {
         const isExists = await UserModal.findOne({ email });
-        console.log(isExists)
+        // console.log(isExists)
         if (isExists) {
             return res.status(400).json({
                 success: false,
@@ -16,7 +16,7 @@ const userRegister = async (req, res) => {
             });
         }
         const hashpassword = await bcrypt.hash(password, 10);
-        console.log(hashpassword)
+        // console.log(hashpassword)
         const user1 = new UserModal({
             name: name,
             email,
@@ -30,7 +30,7 @@ const userRegister = async (req, res) => {
             }
         });
         const userData = await user1.save();
-        console.log(userData)
+        // console.log(userData)
         return res.status(200).json({
             success: true,
             msg: "Registered Successfully",
@@ -47,13 +47,13 @@ const userRegister = async (req, res) => {
 
 const userLogin = async (req, res) => {
     const { email, password } = req.body
-    console.log(email, password)
+    // console.log(email, password)
     try {
         const user = await UserModal.findOne({ email })
-        console.log(user)
+        // console.log(user)
         if (user != null) {
             const isMatch = await bcrypt.compare(password, user.password)
-            console.log(isMatch)
+            // console.log(isMatch)
             if (user.email === email && isMatch) {
                 const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
                 return res.status(200).json({
@@ -130,13 +130,13 @@ http://localhost:3000/api/user/reset/65c320d1a1dbbfb7ed48b28f/eyJhbGciOiJIUzI1Ni
 const userPasswordReset = async (req, res) => {
     const { password, confirm_password } = req.body
     const { id, token } = req.query
-    console.log("get:===>", id, token)
-    console.log(password,confirm_password)
+    // console.log("get:===>", id, token)
+    // console.log(password,confirm_password)
     try {
         const user = await UserModal.findById(id)
         const new_secret = user._id + process.env.JWT_SECRET_KEY
         const {userID} = jwt.verify(token, new_secret)
-        console.log(userID)
+        // console.log(userID)
         if (password && confirm_password) {
             if (password !== confirm_password) {
                 return res.status(400).json({
@@ -147,7 +147,7 @@ const userPasswordReset = async (req, res) => {
             else {
                // const salt = await bcrypt.genSalt(10)
                 const newHashPassword = await bcrypt.hash(password, 10)
-                console.log(user._id)
+                // console.log(user._id)
                 const data = await UserModal.findByIdAndUpdate({_id:user._id}, { $set: { password: newHashPassword } },{
                     new: true,
                     useFindAndModify: false
