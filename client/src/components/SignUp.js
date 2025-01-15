@@ -25,7 +25,7 @@ export default function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(FormData);
+    console.log(FormData);
     axios
       .post(SIGNUP, FormData)
       .then((response) => {
@@ -33,7 +33,7 @@ export default function SignUp() {
         alert("SignUp Successfully Done!!");
       })
       .catch((error) => {
-        alert("Error", error);
+        alert("Error", error.msg);
       });
     setFormData({
       name: "",
