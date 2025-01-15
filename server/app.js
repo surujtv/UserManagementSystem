@@ -12,7 +12,7 @@ const indexrouter = require('./route/indexroute')
 const adminrouter = require('./route/adminroute')
 const userrouter = require('./route/userroute')
 
-const PORTNO = process.env.PORTNO || 4000   
+const PORTNO = process.env.PORTNO || 5000 
 
 app.use(express.json())
 
