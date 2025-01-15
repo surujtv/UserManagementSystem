@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:4056";
+export const BASE_URL = "https://usermanagementsystem-du6a.onrender.com";
 export const SIGNUP = BASE_URL + "/api/register";
 export const SIGNIN = BASE_URL + "/api/login";
 export const RESET_EMAIL = BASE_URL + "/api/senduserpasswordresetemail";
