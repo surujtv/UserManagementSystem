@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
-dotenv.config({path:'./config/config.env'})
+dotenv.config()
 var uri = process.env.MONGODB_URL
 mongoose.connect(uri)
 .then((result)=>{

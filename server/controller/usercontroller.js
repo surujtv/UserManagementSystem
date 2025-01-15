@@ -4,7 +4,7 @@ const dotenv = require('dotenv')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const ObjectId = require('mongodb').ObjectId;
-dotenv.config({ path: './config/config.env' })
+dotenv.config()
 
 const createPost = async (req, res) => {
     const { post_description, userId } = req.body
