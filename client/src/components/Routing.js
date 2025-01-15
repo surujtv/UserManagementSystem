@@ -32,7 +32,7 @@ export default function Routing() {
                 <Route path='/admin/manageusers' element={<ManageUsers />}></Route>
                 <Route path='/admin' element={ <Admin />}></Route>
                 <Route path='/email' element={<Email />}></Route>
-                <Route path='/forgotpassword' element={<ForgotPassword />}></Route>
+                <Route path='/forgotpassword/' element={<ForgotPassword />}></Route>
                 <Route path='/user/changepassword' element={<ChangePassword />}></Route>
                 <Route path='/user/editprofile' element={<EditProfile />}></Route>
                 <Route path='/user/post' element={<UserPost />}></Route>

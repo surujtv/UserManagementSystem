@@ -54,9 +54,11 @@ export default function SignIn() {
       password: "",
     });
   };
+  
   const handleEmail = () => {
     navigate("/email");
   };
+  
   return (
     <div>
       <div>
@@ -106,8 +108,7 @@ export default function SignIn() {
                 className="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
                 id="navbar-vertical"
                 style={{ width: "calc(100%-30)", zIndex: 9 }}
-              >
-              </nav>
+              ></nav>
             </div>
             <div className="col-lg-9">
               <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
