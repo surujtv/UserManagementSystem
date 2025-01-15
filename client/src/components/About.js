@@ -52,20 +52,6 @@ export default function About() {
                 id="navbar-vertical"
                 style={{ width: "calc(100%-30)", zIndex: 9 }}
               >
-                {/* <div className="navbar-nav w-100">
-                        <div className="nav-item dropdown">
-                            <a href="#" className="nav-link" data-toggle="dropdown">Web Design <i className="fa fa-angle-down float-right mt-1"></i></a>
-                            <div className="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" className="dropdown-item">HTML</a>
-                                <a href="" className="dropdown-item">CSS</a>
-                                <a href="" className="dropdown-item">jQuery</a>
-                            </div>
-                        </div>
-                        <a href="" className="nav-item nav-link">Apps Design</a>
-                        <a href="" className="nav-item nav-link">Marketing</a>
-                        <a href="" className="nav-item nav-link">Research</a>
-                        <a href="" className="nav-item nav-link">SEO</a>
-                    </div> */}
               </nav>
             </div>
             <div className="col-lg-9">
